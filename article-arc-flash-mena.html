@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arc flash studies under IEEE 1584-2018: what's changed for MENA — EMobility Egypt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">
+        <img src="public/logo_white.png" alt="EMobility logo" style="max-width:150px; height:auto;" />
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="index">HOME</a></li>
+      <li><a href="about.html" data-page="about">ABOUT US</a></li>
+      <li><a href="solutions.html" data-page="solutions">SOLUTIONS</a></li>
+      <li><a href="industries.html" data-page="industries">INDUSTRIES</a></li>
+      <li><a href="projects.html" data-page="projects">PROJECTS</a></li>
+      <li><a href="partners.html" data-page="partners">PARTNERS</a></li>
+      <li><a href="news.html" data-page="news">NEWS &amp; INSIGHTS</a></li>
+      <li><a href="careers.html" data-page="careers">CAREERS</a></li>
+      <li><a href="contact.html" data-page="contact">CONTACT US</a></li>
+      <li class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-sep">·</span>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </li>
+      <li><span class="nav-search">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M13 13L17 17"/></svg>
+      </span></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <a class="article-back" href="news.html" data-i18n="cta.backToNews">← Back to News &amp; Insights</a>
+        <span class="article-category">Engineering</span>
+        <h1>Arc flash studies under IEEE 1584-2018: what's changed for MENA</h1>
+        <div class="article-meta">
+          <div class="article-meta-item"><strong>10 March 2026</strong></div>
+          <div class="article-meta-item">10 min read</div>
+          <div class="article-meta-item">By <strong>Elena Vasquez</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-hero-image">
+      <img src="https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?w=1600&q=80" alt="Engineering studies"/>
+    </div>
+
+    <div class="article-body-wrap">
+      <div class="article-lead">
+        IEEE 1584-2018 quietly changed the arc flash hazard analysis landscape for industrial and utility installations. Five years on, we still see studies in the MENA region that haven't caught up — with real consequences for personnel safety, PPE specification, and electrical room design.
+      </div>
+
+      <div class="article-body">
+        <p>Arc flash hazard analysis sits at an uncomfortable intersection of physics, statistics, and operational reality. The IEEE 1584-2002 standard served the industry well for over a decade, but its empirical model — built on a relatively small set of test data — was known to be conservative in some scenarios and dangerously non-conservative in others.</p>
+
+        <p>IEEE 1584-2018 fundamentally rebuilt the calculation methodology on a much larger empirical dataset, with explicit handling of electrode configuration, enclosure dimensions, and working distance. That change matters for every MENA facility doing fresh arc flash work.</p>
+
+        <h2>What actually changed</h2>
+
+        <p>The 2018 standard introduces five things that materially affect study outcomes:</p>
+
+        <ul>
+          <li><strong>Electrode configuration is now explicit.</strong> Vertical conductors in box (VCB), vertical conductors in box with insulating barrier (VCBB), horizontal conductors in box (HCB), vertical conductors in open air (VOA), and horizontal conductors in open air (HOA) each have distinct calculation paths. The 2002 methodology was less granular.</li>
+          <li><strong>Enclosure size matters now.</strong> Box dimensions affect the calculation directly. Small enclosures with high fault currents produce noticeably different incident energy values than 2002 would have predicted.</li>
+          <li><strong>Working distance ranges have expanded.</strong> Realistic working distances of 18, 24, and 36 inches are now baseline calculations, not adjustments.</li>
+          <li><strong>System voltage range extended to 15 kV.</strong> Studies that previously had to extrapolate above 600V can now use the standard's empirical model directly.</li>
+          <li><strong>Two-second cutoff revisited.</strong> The default 2-second incident energy cap is no longer automatic — it requires justification based on operator egress paths.</li>
+        </ul>
+
+        <h2>Why MENA installations are particularly affected</h2>
+
+        <p>Many industrial facilities in the region were energized in the early-to-mid 2000s and never had a proper arc flash study done. Where studies exist, they often pre-date the 2018 standard — and the equipment labels reflect calculations that no longer represent best practice.</p>
+
+        <p>Three patterns we see repeatedly in MENA installations:</p>
+
+        <ol>
+          <li><strong>MV switchgear under-labeled.</strong> The expanded methodology often increases incident energy estimates for medium-voltage equipment, especially in compact enclosures.</li>
+          <li><strong>VFD-fed equipment incorrectly characterized.</strong> Variable frequency drive contributions to fault current are now better understood, and studies that ignore them are out of date.</li>
+          <li><strong>LV panels over-conservative.</strong> Some low-voltage scenarios — particularly large enclosures with moderate fault currents — actually show <em>lower</em> incident energy under the 2018 methodology. PPE specifications based on old calculations may be unnecessarily restrictive.</li>
+        </ol>
+
+        <div class="article-callout">
+          The risk isn't only that workers wear too little PPE. It's also that they wear too much — and the operational burden of inappropriate PPE is what drives the worst safety behaviors, including unauthorized de-energization.
+        </div>
+
+        <h2>The labeling problem</h2>
+
+        <p>Many MENA facilities still have arc flash labels printed in 2010 and never refreshed. Even where the underlying engineering is sound, the labels themselves need to be reviewed against current standards — including NFPA 70E-2024 PPE category mappings, which have evolved alongside IEEE 1584.</p>
+
+        <p>Our standing recommendation: any facility older than 5 years should commission a fresh arc flash study, and the resulting labels should follow NFPA 70E 2024 PPE category guidance with explicit incident energy values, not legacy category numbers.</p>
+
+        <h2>What a proper study now includes</h2>
+
+        <p>Beyond the IEEE 1584-2018 calculations themselves, a defensible modern arc flash study should include:</p>
+
+        <ul>
+          <li>Up-to-date short circuit modeling with actual measured impedances</li>
+          <li>Protection device coordination verified against current settings (not just nameplate ratings)</li>
+          <li>Working distance assumptions matched to actual operator practice</li>
+          <li>Egress path analysis for the 2-second cutoff assumption</li>
+          <li>Mitigation recommendations where incident energy exceeds practical PPE limits</li>
+          <li>Clear labeling specifications that align with NFPA 70E and local utility requirements</li>
+        </ul>
+
+        <p>Arc flash is one of the engineering disciplines where doing it properly is significantly more work than doing it superficially — but the cost differential between the two approaches is dwarfed by the cost of getting it wrong. For any facility in the region operating MV or LV switchgear, this is no longer optional engineering. It's foundational.</p>
+      </div>
+
+      <div class="article-author">
+        <div class="article-author-avatar">EV</div>
+        <div>
+          <div class="article-author-meta" data-i18n="article.author">Author</div>
+          <div class="article-author-name">Elena Vasquez</div>
+          <div class="article-author-role">Chief Engineer · EMobility Egypt</div>
+        </div>
+      </div>
+
+      <div class="article-share">
+        <div class="article-share-label" data-i18n="article.share">Share</div>
+        <div class="article-share-btns">
+          <a class="article-share-btn" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.7a1.8 1.8 0 110-3.6 1.8 1.8 0 010 3.6zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg></a>
+          <a class="article-share-btn" href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a class="article-share-btn" href="#" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></a>
+          <a class="article-share-btn" href="#" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <section class="related-articles">
+      <div class="related-articles-header">
+        <h3 class="display" data-i18n="article.related">Related insights</h3>
+      </div>
+      <div class="related-articles-grid">
+        <a class="project-card" style="aspect-ratio: 4/3;" href="article-substation-nac.html">
+          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80" alt=""/>
+          <div class="project-card-meta">
+            <div style="font-size: 12px; color: var(--green); font-weight: 600; letter-spacing: 0.12em; margin-bottom: 8px;">POWER · 05 APR 2026</div>
+            <h3 style="font-size: 18px;">Substation automation: lessons from the New Administrative Capital</h3>
+          </div>
+        </a>
+        <a class="project-card" style="aspect-ratio: 4/3;" href="article-tier3-ups.html">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt=""/>
+          <div class="project-card-meta">
+            <div style="font-size: 12px; color: var(--green); font-weight: 600; letter-spacing: 0.12em; margin-bottom: 8px;">CRITICAL POWER · 22 MAR 2026</div>
+            <h3 style="font-size: 18px;">Why Tier III data centers need redesigned UPS architectures</h3>
+          </div>
+        </a>
+        <a class="project-card" style="aspect-ratio: 4/3;" href="article-opc-ua-scada.html">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80" alt=""/>
+          <div class="project-card-meta">
+            <div style="font-size: 12px; color: var(--green); font-weight: 600; letter-spacing: 0.12em; margin-bottom: 8px;">AUTOMATION · 02 MAY 2026</div>
+            <h3 style="font-size: 18px;">OPC UA in modern water utility SCADA architectures</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2 class="display" data-i18n="article.cta.title">Want engineering insights in your inbox?</h2>
+      <a class="btn btn-primary" href="contact.html" data-i18n="cta.subscribe">Subscribe</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="cursor: default;">
+        <div class="logo-icon">
+          <svg viewBox="0 0 50 32" fill="none">
+            <path d="M5 24 Q12 8, 25 12 Q38 8, 45 24" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="13" cy="24" r="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+            <circle cx="37" cy="24" r="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+            <path d="M16 24 L34 24" stroke="#1A1A1A" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="logo-text" style="color: var(--ink);"><strong>E</strong>-MOBILITY</div>
+      </div>
+      <p>We provide integrated engineering solutions spanning Consulting, Engineering, Design, Supply, Testing, Commissioning, aftersales operation and services, energy management system, and backend SW & MobileApp.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="news.html">News & Insights</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact us</h4>
+      <div class="email-row">
+        <div class="email-icon">
+          <svg viewBox="0 0 18 18" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="14" height="10" rx="1"/><path d="M2 5l7 5 7-5"/></svg>
+        </div>
+        <div>
+          <div class="email-text">Email</div>
+          <div class="email-addr">info@emobility-eg.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Location</h4>
+      <div class="footer-map"></div>
+    </div>
+  </div>
+  <div class="footer-bottom">All Rights Reserved 2026 · EMobility Egypt for Technology</div>
+</footer>
+
+<a class="whatsapp-float" href="#" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.2-.2-.5-.3zM12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6c1.7 1 3.6 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+</a>
+
+<script src="translations.js"></script>
+<script src="animations.js"></script>
+
+</body>
+</html>

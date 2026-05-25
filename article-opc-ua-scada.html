@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OPC UA in modern water utility SCADA architectures — EMobility Egypt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">
+        <img src="public/logo_white.png" alt="EMobility logo" style="max-width:150px; height:auto;" />
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="index">HOME</a></li>
+      <li><a href="about.html" data-page="about">ABOUT US</a></li>
+      <li><a href="solutions.html" data-page="solutions">SOLUTIONS</a></li>
+      <li><a href="industries.html" data-page="industries">INDUSTRIES</a></li>
+      <li><a href="projects.html" data-page="projects">PROJECTS</a></li>
+      <li><a href="partners.html" data-page="partners">PARTNERS</a></li>
+      <li><a href="news.html" data-page="news">NEWS &amp; INSIGHTS</a></li>
+      <li><a href="careers.html" data-page="careers">CAREERS</a></li>
+      <li><a href="contact.html" data-page="contact">CONTACT US</a></li>
+      <li class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-sep">·</span>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </li>
+      <li><span class="nav-search">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M13 13L17 17"/></svg>
+      </span></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <a class="article-back" href="news.html" data-i18n="cta.backToNews">← Back to News &amp; Insights</a>
+        <span class="article-category">Automation</span>
+        <h1>The case for OPC UA in modern water utility SCADA architectures</h1>
+        <div class="article-meta">
+          <div class="article-meta-item"><strong>02 May 2026</strong></div>
+          <div class="article-meta-item">8 min read</div>
+          <div class="article-meta-item">By <strong>Eng. Sarah Okonkwo</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-hero-image">
+      <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1600&q=80" alt="SCADA control room"/>
+    </div>
+
+    <div class="article-body-wrap">
+      <div class="article-lead">
+        For two decades, water utility SCADA architectures across MENA have been held together by Modbus RTU, IEC 60870-5-104, and a generous helping of proprietary protocols. That worked when SCADA was a centralized monitoring tool. It doesn't work when SCADA has to become the operational backbone of a 14,000-tag, multi-site water utility.
+      </div>
+
+      <div class="article-body">
+        <p>When we modernized the Greater Cairo Water Authority SCADA last year — 42 pumping stations, six treatment plants, 11 million people served — we made a deliberate architectural decision early in the project. The new master SCADA would talk to every field PLC over OPC UA, with IEC 60870-5-104 retained only for the legacy dispatch interface.</p>
+
+        <p>That decision was not popular at first. OPC UA has a reputation for being heavy, complex, and overkill for "simple" SCADA needs. After 18 months of live operation, here's what we've actually learned.</p>
+
+        <h2>Why legacy protocols stop scaling</h2>
+
+        <p>Modbus, IEC-104, and DNP3 share a common limitation: they're flat, register-based, and carry no semantic context. A register at address 40100 might be a pressure reading in bar — or kPa, or psi — and you'd never know from the protocol itself. That metadata lives in spreadsheets, tribal knowledge, and engineering drawings that nobody updates.</p>
+
+        <p>At small scale this is annoying. At 14,000 tags across 48 sites, it becomes a daily operational risk. We've seen utilities run for years with wrong unit assumptions in their dispatch — the data was being read correctly, but interpreted incorrectly.</p>
+
+        <h2>What OPC UA actually delivers</h2>
+
+        <p>OPC UA solves three structural problems that water utility SCADA has been quietly suffering from:</p>
+
+        <ul>
+          <li><strong>Information modeling.</strong> Tags carry their own units, descriptions, types, and engineering bounds. The master SCADA discovers the field PLC's tag structure automatically — no spreadsheet, no manual mapping.</li>
+          <li><strong>Built-in security.</strong> X.509 certificate-based authentication and per-session encryption are part of the protocol, not bolted on. For critical infrastructure this is no longer optional.</li>
+          <li><strong>Native scalability.</strong> Subscriptions, publish-on-change, and proper namespace structure let a master SCADA monitor 14,000 tags with a fraction of the network traffic that polled IEC-104 would require.</li>
+        </ul>
+
+        <div class="article-callout">
+          The unspoken benefit of OPC UA is operational: when a new pumping station gets commissioned, integrating it into central SCADA is a half-day job, not a two-week engineering exercise.
+        </div>
+
+        <h2>The migration playbook</h2>
+
+        <p>The biggest mistake utilities make in OPC UA migrations is trying to do it all at once. Our recommended approach, refined over three large deployments:</p>
+
+        <ol>
+          <li>Start with one greenfield site. Use it to build your namespace conventions, certificate management, and operational runbooks.</li>
+          <li>Migrate one critical site (typically a treatment plant). This validates the architecture under real load.</li>
+          <li>Roll out remaining sites in parallel waves. Each wave should include a brownfield site retrofit so the team builds that muscle.</li>
+        </ol>
+
+        <p>The first two phases take about 40% of the calendar time but eliminate 80% of the integration risk. Skipping them is the most common reason OPC UA migrations stall.</p>
+
+        <h2>Measured outcomes</h2>
+
+        <p>On Greater Cairo Water Authority, the post-migration numbers spoke for themselves: 23% reduction in pumping energy costs through smarter scheduling enabled by tag-rich SCADA data, mean time to detect pipe-burst events down from 4 hours to 12 minutes, and a unified central control room that consolidates what used to be three separate operational silos.</p>
+
+        <p>OPC UA isn't a silver bullet — but for any utility scaling past a few hundred field tags, it's no longer the harder choice. It's the easier one.</p>
+      </div>
+
+      <div class="article-author">
+        <div class="article-author-avatar">SO</div>
+        <div>
+          <div class="article-author-meta" data-i18n="article.author">Author</div>
+          <div class="article-author-name">Eng. Sarah Okonkwo</div>
+          <div class="article-author-role">Director of Field Operations · EMobility Egypt</div>
+        </div>
+      </div>
+
+      <div class="article-share">
+        <div class="article-share-label" data-i18n="article.share">Share</div>
+        <div class="article-share-btns">
+          <a class="article-share-btn" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.7a1.8 1.8 0 110-3.6 1.8 1.8 0 010 3.6zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg></a>
+          <a class="article-share-btn" href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a class="article-share-btn" href="#" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></a>
+          <a class="article-share-btn" href="#" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <section class="related-articles">
+      <div class="related-articles-header">
+        <h3 class="display" data-i18n="article.related">Related insights</h3>
+      </div>
+      <div class="related-articles-grid">
+        <a class="project-card" style="aspect-ratio: 4/3;" href="article-substation-nac.html">
+          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80" alt=""/>
+          <div class="project-card-meta">
+            <div style="font-size: 12px; color: var(--green); font-weight: 600; letter-spacing: 0.12em; margin-bottom: 8px;">POWER · 05 APR 2026</div>
+            <h3 style="font-size: 18px;">Substation automation: lessons from the New Administrative Capital</h3>
+          </div>
+        </a>
+        <a class="project-card" style="aspect-ratio: 4/3;" href="article-bms-energy.html">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt=""/>
+          <div class="project-card-meta">
+            <div style="font-size: 12px; color: var(--green); font-weight: 600; letter-spacing: 0.12em; margin-bottom: 8px;">SMART CITIES · 20 APR 2026</div>
+            <h3 style="font-size: 18px;">BMS-driven energy optimization at scale</h3>
+          </div>
+        </a>
+        <a class="project-card" style="aspect-ratio: 4/3;" href="article-arc-flash-mena.html">
+          <img src="https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?w=600&q=80" alt=""/>
+          <div class="project-card-meta">
+            <div style="font-size: 12px; color: var(--green); font-weight: 600; letter-spacing: 0.12em; margin-bottom: 8px;">ENGINEERING · 10 MAR 2026</div>
+            <h3 style="font-size: 18px;">Arc flash studies under IEEE 1584-2018: what's changed for MENA</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2 class="display" data-i18n="article.cta.title">Want engineering insights in your inbox?</h2>
+      <a class="btn btn-primary" href="contact.html" data-i18n="cta.subscribe">Subscribe</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="cursor: default;">
+        <div class="logo-icon">
+          <svg viewBox="0 0 50 32" fill="none">
+            <path d="M5 24 Q12 8, 25 12 Q38 8, 45 24" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="13" cy="24" r="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+            <circle cx="37" cy="24" r="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+            <path d="M16 24 L34 24" stroke="#1A1A1A" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="logo-text" style="color: var(--ink);"><strong>E</strong>-MOBILITY</div>
+      </div>
+      <p>We provide integrated engineering solutions spanning Consulting, Engineering, Design, Supply, Testing, Commissioning, aftersales operation and services, energy management system, and backend SW & MobileApp.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="news.html">News & Insights</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact us</h4>
+      <div class="email-row">
+        <div class="email-icon">
+          <svg viewBox="0 0 18 18" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="14" height="10" rx="1"/><path d="M2 5l7 5 7-5"/></svg>
+        </div>
+        <div>
+          <div class="email-text">Email</div>
+          <div class="email-addr">info@emobility-eg.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Location</h4>
+      <div class="footer-map"></div>
+    </div>
+  </div>
+  <div class="footer-bottom">All Rights Reserved 2026 · EMobility Egypt for Technology</div>
+</footer>
+
+<a class="whatsapp-float" href="#" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.2-.2-.5-.3zM12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6c1.7 1 3.6 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+</a>
+
+<script src="translations.js"></script>
+<script src="animations.js"></script>
+
+</body>
+</html>
